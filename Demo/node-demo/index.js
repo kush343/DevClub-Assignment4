@@ -1,7 +1,7 @@
 const http = require('http');
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 8080;
 
 function myServer (req, res) {
     // console.log({req});
@@ -16,11 +16,13 @@ function myServer (req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.end(String(ans));
 }
-
-const server = http.createServer(myServer);
-
-function callBack() {
+function callnew() {
     console.log(`Server running at http://${hostname}:${port}/`);;
 }
+const server = http.createServer(myServer);
+
+// function callBack() {
+//     console.log(`Server running at http://${hostname}:${port}/`);;
+// }
 
 server.listen(port, hostname, callBack);
